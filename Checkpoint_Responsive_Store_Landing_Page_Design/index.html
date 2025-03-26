@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>boundless books</title>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="assets/images/logo.png" alt="logo" height="70px"></div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-label">
+            <span class="menu-icon">☰</span>
+            <span class="close-icon">✕</span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <button class="cart-btn">
+                    <img src="./assets/images/cart_8728648.png" alt="Cart">
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <div class="products">
+        <input type="checkbox" id="toggle-aside" hidden>
+        <aside id="all-filters">
+            <label for="toggle-aside" class="close-button">X</label>
+            <!--Genre filter-->
+            <div class="filter">
+                <fieldset>
+                    <legend>Genre</legend>
+                    <input type="checkbox" id="genre-fiction" name="genre" value="Fiction">
+                    <label for="genre-fiction">Fiction</label><br>
+                    <input type="checkbox" id="genre-mystery" name="genre" value="Mystery">
+                    <label for="genre-mystery">Mystery</label><br>
+                    <input type="checkbox" id="genre-scifi" name="genre" value="Science Fiction">
+                    <label for="genre-scifi">Science Fiction</label><br>
+                    <input type="checkbox" id="genre-fantasy" name="genre" value="Fantasy">
+                    <label for="genre-fantasy">Fantasy</label><br>
+                    <input type="checkbox" id="genre-romance" name="genre" value="Romance">
+                    <label for="genre-romance">Romance</label><br>
+                </fieldset>
+            </div>
+
+            <!--Author filter-->
+            <div class="filter">
+                <fieldset>
+                    <legend>Author</legend>
+                    <input type="checkbox" id="author-jkrowling" name="author" value="J.K. Rowling">
+                    <label for="author-jkrowling">J.K. Rowling</label><br>
+                    <input type="checkbox" id="author-georgeorwell" name="author" value="George Orwell">
+                    <label for="author-georgeorwell">George Orwell</label><br>
+                    <input type="checkbox" id="author-janeausten" name="author" value="Jane Austen">
+                    <label for="author-janeausten">Jane Austen</label><br>
+                    <input type="checkbox" id="author-stephenking" name="author" value="Stephen King">
+                    <label for="author-stephenking">Stephen King</label><br>
+                    <input type="checkbox" id="author-agathachristie" name="author" value="Agatha Christie">
+                    <label for="author-agathachristie">Agatha Christie</label><br>
+                </fieldset>
+            </div>
+
+            <!--Customer review filter-->
+            <div class="filter">
+                <fieldset>
+                    <legend>Customer Review</legend>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </fieldset>
+            </div>
+
+            <!--Price filter-->
+            <div class="filter">
+                <fieldset>
+                    <legend>Price</legend>
+                    <label for="price-range">0$</label>
+                    <input type="range" id="price-range" name="price-range" min="0" max="70" value="35">
+                    <output for="price-range" id="price-output">70$</output>
+                </fieldset>
+            </div>
+            <button id="apply-filter">Apply Filters</button>
+
+        </aside>
+        <main>
+            <label for="toggle-aside" class="filter-button">Filter</label>
+            <section class="all-cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book1.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore incidunt, nostrum quis temporibus a repellendus minus natus dicta, aliquid at ut amet optio, aut rerum ipsa blanditiis necessitatibus possimus?</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(164)</h6>
+                    </div>
+                    <h5 class="author-purchase">13$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book2.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ipsum aperiam qui dolor nobis aspernatur distinctio quas cumque laboriosam placeat. Explicabo dolore ipsam obcaecati consequuntur beatae dolores atque odit modi.</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(51)</h6>
+                    </div>
+                    <h5 class="author-purchase">7$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book3.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime soluta voluptate animi quia voluptatibus adipisci earum provident necessitatibus aliquam ducimus iusto atque sed quod aperiam numquam error, incidunt in minima.</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(235)</h6>
+                    </div>
+                    <h5 class="author-purchase">10$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book4.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad velit quia, quibusdam harum voluptate porro reiciendis beatae natus assumenda maxime, consequuntur fugit dicta accusamus, optio rem. Ea necessitatibus voluptatibus deleniti.</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(167)</h6>
+                    </div>
+                    <h5 class="author-purchase">20$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book5.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolorum aliquam dolores, rerum quo nemo quos tempore, ea maiores natus dolorem? Laudantium necessitatibus veniam facilis cum alias delectus hic suscipit?</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(780)</h6>
+                    </div>
+                    <h5 class="author-purchase">16$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book1.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non excepturi qui ea nam unde expedita facilis quae. Ipsa sit velit qui rerum odit harum libero dicta nihil culpa consectetur. Sint.</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(483)</h6>
+                    </div>
+                    <h5 class="author-purchase">5$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book4.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis dicta deleniti praesentium assumenda a! Reiciendis, laudantium vero esse aliquid molestiae voluptatibus atque necessitatibus eos nam aut ut facilis. Cupiditate, voluptate.</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(10)</h6>
+                    </div>
+                    <h5 class="author-purchase">45$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/book5.webp" alt="book cover">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="book-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore esse, quibusdam totam ex minima neque voluptatem ipsam ad natus corrupti eveniet hic quo aliquid architecto a iusto. Aliquid, adipisci reiciendis!</p>
+                        </div>
+                    </div>
+                    <div class="author-purchase">
+                        <h6>Author-name</h6>
+                        <h6>(231)</h6>
+                    </div>
+                    <h5 class="author-purchase">32$</h5>
+                    <div class="info-shop-btn">
+                        <button>Details</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <img src="./assets/images/logo.png" height="80px" style="padding: 50px;">  
+            <div class="contact">
+                <h3>contact Us</h3>
+            <ul>
+                <li><a href="Boundlessbooks@gmail.com">Email</a></li>
+                <li> <a href="+2120000000">Phone</a></li>
+                <li> <a href="https://maps.app.goo.gl/GS3eXfWjDz21aX4X7">Maps</a></li>
+            </ul>
+              
+            </div>
+            <div class="footer-Nav">
+                <h3>Quick links</h3>
+             <ul>
+                 <li><a href="">home</a></li>
+                 <li><a href="">about</a></li>
+                 <li><a href="">contac us</a> </li>
+                 <li><a href="">services</a></li>
+                 <li><a href="">proucts</a></li>
+             </ul>
+            </div>
+    
+            <div class="social-icons">
+                
+                <h3>Follow Us</h3>
+                <ul class="icons">
+                    <li><a href="www.facebook.com"> <i class="fa-brands fa-facebook"></i></a></li>
+                    <li> <a href="www.istagram.co "> <i class="fa-brands fa-instagram "></i></a></li>
+                    <li><a href="www.twiter.com "> <i class="fa-brands fa-twitter "></i></a></li>
+                    <li><a href="www.linkdin.com "> <i class="fa-brands fa-linkedin "></i></a></li>
+                </ul>
+             
+            </div>
+         </div>
+         <div class="bottom-bar">
+            <p>&copy; 2025 Boundlessbooks. All rights reserved.</p>
+        </div>
+    </footer>    
+</body>
+</html>

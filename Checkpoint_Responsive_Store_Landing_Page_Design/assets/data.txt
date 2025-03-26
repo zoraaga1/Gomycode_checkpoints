@@ -1,0 +1,11 @@
+#f9f9f9 (main background, text color)
+#eaeaea (cards background)
+#333333 (text color main, navigation bar, footer)
+#787d66 (hoover effect, button colors)
+#b0a999 (borders)
+
+Font family:
+'Times New Roman', Times, serif;
+
+cdn global:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
