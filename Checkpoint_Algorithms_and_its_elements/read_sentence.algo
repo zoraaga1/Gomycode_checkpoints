@@ -1,0 +1,43 @@
+ALGORITHM read_sentence
+VAR
+    sentence : STRING
+    sentence_length : NUMBER
+    count : NUMBER ← 0
+    words : NUMBER ← 0
+    vowels_number : NUMBER ← 0
+    vowel_set : ARRAY ← ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    _char : CHARACTER
+    prev_char_is_space : BOOLEAN ← TRUE
+
+BEGIN
+    READ(sentence)
+    sentence_length := sentence.length
+
+    WHILE (count < sentence_length) DO
+        _char := sentence[count]  // Get current character
+
+        IF (_char IN vowel_set) THEN
+            vowels_number := vowels_number + 1
+        END IF
+
+        IF (_char = ' ') THEN
+            IF (NOT prev_char_is_space) THEN
+                words := words + 1
+            END IF
+            prev_char_is_space := TRUE
+        ELSE IF (_char ≠ '.') THEN
+            prev_char_is_space := FALSE
+        END IF
+
+        count := count + 1
+    END WHILE
+
+    IF (NOT prev_char_is_space) THEN
+        words := words + 1
+    END IF
+
+    // Output results
+    WRITE("Sentence length: ", sentence_length)
+    WRITE("Number of words: ", words)
+    WRITE("Number of vowels: ", vowels_number)
+END
