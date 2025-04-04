@@ -1,0 +1,40 @@
+ALGORITHM sum_unique_from_longer_array
+VAR
+    set1 : ARRAY [0..3] OF INTEGER := [3, 1, 7, 9];
+    set2 : ARRAY [0..4] OF INTEGER := [2, 4, 1, 9, 3];
+    longerSet, shorterSet : ARRAY OF INTEGER;
+    i, j, output : INTEGER;
+    found : BOOLEAN;
+BEGIN
+    // Identify the longer and shorter array
+    IF LENGTH(set1) > LENGTH(set2) THEN
+        longerSet := set1;
+        shorterSet := set2;
+    ELSE
+        longerSet := set2;
+        shorterSet := set1;
+    END_IF
+
+    output := 0;
+
+    // Loop through elements of the longer array
+    FOR i FROM 0 TO LENGTH(longerSet) - 1 DO
+        found := FALSE;
+
+        // Check if the element exists in the shorter array
+        FOR j FROM 0 TO LENGTH(shorterSet) - 1 DO
+            IF longerSet[i] = shorterSet[j] THEN
+                found := TRUE;
+                BREAK;
+            END_IF
+        END_FOR
+
+        // If not found, add to output
+        IF NOT found THEN
+            output := output + longerSet[i];
+        END_IF
+    END_FOR
+
+    // Display the result
+    WRITE("Output = ", output);
+END

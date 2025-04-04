@@ -1,0 +1,75 @@
+// Using procedure
+PROCEDURE dot_product(v1, v2, n, VAR ps)
+VAR
+    i : INTEGER;
+BEGIN
+    ps := 0;
+    FOR i FROM 0 TO n - 1 DO
+        ps := ps + v1[i] * v2[i];
+    END_FOR
+END_PROCEDURE
+
+ALGORITHM check_orthogonal_procedure
+VAR
+    v1, v2 : ARRAY OF REAL;
+    ps : REAL;
+    n, i : INTEGER;
+BEGIN
+    READ(n);  // Number of vector pairs
+
+    FOR i FROM 1 TO n DO
+        // Read the first and second vector
+        READ(v1);  // First vector
+        READ(v2);  // Second vector
+
+        // Call the procedure to calculate the dot product
+        CALL dot_product(v1, v2, LENGTH(v1), ps);
+
+        // Check if the result is zero
+        IF ps = 0 THEN
+            WRITE("Orthogonal");  // The vectors are orthogonal
+        ELSE
+            WRITE("Not orthogonal");  // The vectors are not orthogonal
+        END_IF
+    END_FOR
+END
+
+// Using function
+FUNCTION dot_product(v1, v2, n) : REAL
+VAR
+    i : INTEGER;
+    result : REAL;
+BEGIN
+    result := 0;
+
+    FOR i FROM 0 TO n - 1 DO
+        result := result + v1[i] * v2[i];
+    END_FOR
+
+    RETURN result;
+END_FUNCTION
+
+ALGORITHM check_orthogonal_function
+VAR
+    v1, v2 : ARRAY OF REAL;
+    ps : REAL;
+    n, i : INTEGER;
+BEGIN
+    READ(n);  // Number of vector pairs
+
+    FOR i FROM 1 TO n DO
+        // Read the two vectors
+        READ(v1);  // First vector
+        READ(v2);  // Second vector
+
+        // Call the function to calculate the dot product
+        ps := dot_product(v1, v2, LENGTH(v1));
+
+        // Check if the result is zero
+        IF ps = 0 THEN
+            WRITE("Orthogonal");  // The vectors are orthogonal
+        ELSE
+            WRITE("Not orthogonal");  // The vectors are not orthogonal
+        END_IF
+    END_FOR
+END
